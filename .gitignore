@@ -373,6 +373,10 @@ dumps/
 *.dmp
 *.mdmp
 
+
+### Obsidian ###
+.obsidian/
+
 ### Dependencies and local SDK installs ###
 # Keep dependency manifests and source code in git, but ignore installed/generated copies.
 vcpkg_installed/

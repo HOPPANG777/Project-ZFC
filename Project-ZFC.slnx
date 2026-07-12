@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="ZFC-Console/ZFC-Console.vcxproj" />
+  <Project Path="ZFC-Console/ZFC-Console.vcxproj" Id="69c1c989-b7ef-458f-8fbb-63229d4fb552" />
 </Solution>
