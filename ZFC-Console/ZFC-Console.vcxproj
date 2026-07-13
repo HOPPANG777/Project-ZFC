@@ -171,12 +171,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Systems\Map.cpp" />
+    <ClCompile Include="Map\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Systems\Map.h" />
-    <ClInclude Include="Type\TileType.h" />
-    <ClInclude Include="Utilities\Vector.h" />
+    <ClInclude Include="Core\Point.h" />
+    <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="Map\TileType.h" />
+    <ClInclude Include="Core\Vector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -18,19 +18,46 @@
 //
 //=============================================================================
 
+//========================================
+// System Includes
+//========================================
+#include <vector>
+
+//========================================
+// Project Includes
+//========================================
+#include "Core/Point.h"
+#include "TileType.h"
+
+// 타일 그리드 표현용 별칭. 행(row)은 타일 한 줄, 그리드는 행들의 모음이다.
+using TileRow = std::vector<TileType>;
+using TileGrid = std::vector<TileRow>;
+
 class Map
 {
 	///////////////////////////////////////////////////////////////////////
 	// Private Member Data
 	///////////////////////////////////////////////////////////////////////
 private:
+	// 맵을 구성하는 2차원 타일 그리드. [y][x](행, 열) 순으로 접근한다.
+	TileGrid tiles;
 
 
 	///////////////////////////////////////////////////////////////////////
 	// Construction / Destruction
 	///////////////////////////////////////////////////////////////////////
 public:
-	Map() = default;
+	Map();
 	~Map() = default;
 
+
+	///////////////////////////////////////////////////////////////////////
+	// Accessors / Queries
+	///////////////////////////////////////////////////////////////////////
+public:
+	ZFC::Point GetSize() const;
+
+	bool Contains(const ZFC::Point position) const;
+	TileType TileAt(const ZFC::Point position) const;
+	bool IsWalkable(const ZFC::Point position) const;
 };

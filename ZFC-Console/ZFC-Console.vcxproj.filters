@@ -2,11 +2,12 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Systems\Map.cpp" />
+    <ClCompile Include="Map\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Systems\Map.h" />
-    <ClInclude Include="Utilities\Vector.h" />
-    <ClInclude Include="Type\TileType.h" />
+    <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="Core\Vector.h" />
+    <ClInclude Include="Map\TileType.h" />
+    <ClInclude Include="Core\Point.h" />
   </ItemGroup>
 </Project>
