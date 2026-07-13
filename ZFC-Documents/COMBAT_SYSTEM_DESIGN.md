@@ -44,17 +44,17 @@
 
 ## 2. 용어
 
-| 용어 | 정의 |
-| --- | --- |
-| HP | 생명력. 0이 되면 사망한다. 플레이어가 사망하면 전투에서 패배한다. |
-| 체간(Poise) | 피격과 방어로 증가하는 경직 게이지. 최대치에 도달하면 다음 행동 1회를 잃는다. |
-| Tempo | 전투 중 조건을 달성해 얻는 자원. 플레이어는 추가 행동 등에 사용하고 적은 강공격 준비에 사용한다. |
-| 턴 부채(Turn Debt) | 미래 행동을 앞당겨 추가 행동을 사용한 횟수. 다음 턴부터 행동 손실 또는 Tempo로 상환한다. |
-| 자세(Stance) | 유닛의 전투 방식. 공격, 방어, 기동 자세로 구분한다. |
-| 공격 예고(Telegraph) | 다음 적 행동에서 발동할 공격의 방향과 범위를 미리 표시하는 기능이다. |
-| 위험 타일 | 예고 공격이 발동할 때 공격 판정이 발생하는 타일이다. |
-| 경직(Stagger) | 체간 최대치 도달로 인해 다음 행동 1회를 잃는 상태다. |
-| 끊기 | 예고 중인 적의 체간을 파괴해 준비 중인 공격을 취소하는 대응이다. |
+| 용어               | 정의                                                       |
+| ---------------- | -------------------------------------------------------- |
+| HP               | 생명력. 0이 되면 사망한다. 플레이어가 사망하면 전투에서 패배한다.                   |
+| 체간(Poise)        | 피격과 방어로 증가하는 경직 게이지. 최대치에 도달하면 다음 행동 1회를 잃는다.            |
+| Tempo            | 전투 중 조건을 달성해 얻는 자원. 플레이어는 추가 행동 등에 사용하고 적은 강공격 준비에 사용한다. |
+| 턴 부채(Turn Debt)  | 미래 행동을 앞당겨 추가 행동을 사용한 횟수. 다음 턴부터 행동 손실 또는 Tempo로 상환한다.   |
+| 자세(Stance)       | 유닛의 전투 방식. 공격, 방어, 기동 자세로 구분한다.                          |
+| 공격 예고(Telegraph) | 다음 적 행동에서 발동할 공격의 방향과 범위를 미리 표시하는 기능이다.                  |
+| 위험 타일            | 예고 공격이 발동할 때 공격 판정이 발생하는 타일이다.                           |
+| 경직(Stagger)      | 체간 최대치 도달로 인해 다음 행동 1회를 잃는 상태다.                          |
+| 끊기               | 예고 중인 적의 체간을 파괴해 준비 중인 공격을 취소하는 대응이다.                    |
 
 ## 3. 전투 맵
 
@@ -77,9 +77,10 @@
 ```cpp
 enum class TileType
 {
-    Empty,
-    Wall,
-    Danger
+    TILE_NONE = 0,
+    TILE_WALL,
+    TILE_FLOOR,
+    TILE_DANGER
 };
 ```
 
@@ -554,22 +555,24 @@ enum class TileType
 ### 12.1 열거형
 
 ```cpp
-enum class Stance
+enum class StanceType
 {
-    Attack,
-    Guard,
-    Mobility
+	STANCE_NONE = 0,
+    STANCE_ATTACK,
+    STANCE_GUARD,
+    STANCE_MOBILITY
 };
 
 enum class ActionType
 {
-    Move,
-    Attack,
-    Guard,
-    Dodge,
-    Wait,
-    SwitchStance,
-    DebtAction
+	ACTION_NONE = 0,
+    ACTION_MOVE,
+    ACTION_ATTACK,
+    ACTION_GUARD,
+    ACTION_DODGE,
+    ACTION_WAIT,
+    ACTION_SWITCHSTANCE,
+    ACTION_DEBTACTION
 };
 ```
 
@@ -582,7 +585,7 @@ struct PlayerState
     int posture;
     int tempo;
     int debt;
-    Stance stance;
+    StanceType stance;
 };
 ```
 
@@ -610,7 +613,7 @@ struct ActionCommand
     Vec2 targetPosition;
     EnemyId targetEnemy;
     Direction direction;
-    Stance stanceTag;
+    StanceType stanceTag;
     int debtCost;
 };
 ```
@@ -627,7 +630,7 @@ struct EnemyDefinition
 {
     StringId id;
     EnemyRole role;
-    Stance fixedStance;
+    StanceType fixedStance;
     int hpMax;
     int poiseMax;
     int tempoMax;

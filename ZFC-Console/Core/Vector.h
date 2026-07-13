@@ -3,7 +3,7 @@
 //
 // Description: 2D 벡터 타입 Vector2 정의.
 //
-// History:     12/07/2026 + Created -- VicZero
+// History:     12/07/2026 + Created -- VicZero, 사용하지 않음(사유: SimpleMath 추가됨)
 //
 //=============================================================================
 

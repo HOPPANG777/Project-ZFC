@@ -1,5 +1,49 @@
 # 코딩 컨벤션 (Coding Conventions)
 
+## 명명 규칙 (Naming Conventions)
+
+### 1. 열거형 (enum / enum class)
+
+`enum` 과 `enum class` 모두 아래 규칙을 **예외 없이(무조건)** 따른다.
+
+1. **열거자(enumerator) 이름은 `SCREAMING_SNAKE_CASE`** 로 작성한다.
+2. **접두어(prefix)를 반드시 붙인다.** 그 열거형이 무슨 역할인지 / 어디에 쓰이는지 한눈에 구분되도록, 열거형의 이름이나 역할을 나타내는 대명사를 접두어로 사용한다.
+   - 타일이라면 `TILE_`, 자세라면 `STANCE_` 처럼.
+3. **첫 번째 열거자에는 무조건 `= 0` 을 명시한다.** 그것이 첫 번째 값임을 코드에서 바로 알 수 있게 한다.
+4. 열거형 **타입 이름**은 역할을 명확히 알 수 있는 이름으로 짓는다(`PascalCase`).
+
+```cpp
+enum class TileType
+{
+	TILE_NONE = 0,	// 첫 번째 값에는 반드시 = 0
+	TILE_WALL,
+	TILE_FLOOR
+};
+```
+
+```cpp
+enum class Stance
+{
+	STANCE_IDLE = 0,
+	STANCE_CROUCH,
+	STANCE_PRONE
+};
+```
+
+**금지 예시**
+
+```cpp
+// 접두어 없음 + 첫 값에 = 0 없음 + 카멜/파스칼 케이스 사용 → 금지
+enum class TileType
+{
+	None,
+	Wall,
+	Floor
+};
+```
+
+---
+
 ## 주석 (Comments)
 
 ### 0. 기본 원칙
