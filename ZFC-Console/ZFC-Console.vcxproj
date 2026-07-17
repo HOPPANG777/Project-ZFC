@@ -176,6 +176,7 @@
   <ItemGroup>
     <ClInclude Include="Core\Point.h" />
     <ClInclude Include="Map\Map.h" />
+    <ClInclude Include="Map\TileGrid.h" />
     <ClInclude Include="Map\TileType.h" />
     <ClInclude Include="Core\Vector.h" />
   </ItemGroup>

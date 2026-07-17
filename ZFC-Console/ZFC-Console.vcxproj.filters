@@ -9,5 +9,6 @@
     <ClInclude Include="Core\Vector.h" />
     <ClInclude Include="Map\TileType.h" />
     <ClInclude Include="Core\Point.h" />
+    <ClInclude Include="Map\TileGrid.h" />
   </ItemGroup>
 </Project>
