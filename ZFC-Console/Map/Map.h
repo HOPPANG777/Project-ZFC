@@ -4,6 +4,7 @@
 // Description: 맵 시스템 클래스 Map 정의.
 //
 // History:     12/07/2026 + Created -- VicZero
+//              17/07/2026 + 타입 네임스페이스(ZFC) 반영 및 include 정리 -- VicZero
 //
 //=============================================================================
 
@@ -27,7 +28,7 @@
 // Project Includes
 //========================================
 #include "Core/Point.h"
-//#include "TileType.h"
+// TileType.h 는 TileGrid.h 에 포함되어 함께 딸려온다(중복 include 를 피한다).
 #include "TileGrid.h"
 
 class Map
@@ -55,6 +56,6 @@ public:
 	ZFC::Point GetSize() const;
 
 	bool Contains(const ZFC::Point position) const;
-	TileType TileAt(const ZFC::Point position) const;
+	ZFC::TileType TileAt(const ZFC::Point position) const;
 	bool IsWalkable(const ZFC::Point position) const;
 };

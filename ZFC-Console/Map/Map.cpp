@@ -12,6 +12,10 @@
 //========================================
 #include "Map.h"
 
+
+using namespace ZFC;
+using namespace std;
+
 //******************************************************************************
 //
 // Public Member Functions
@@ -43,7 +47,7 @@ Map::Map()
 // Return:      ZFC::Point - x = 열 개수, y = 행 개수.
 //
 //=============================================================================
-ZFC::Point Map::GetSize() const
+Point Map::GetSize() const
 {
     int y = static_cast<int>(tiles.size());
     int x = 0;
@@ -67,7 +71,7 @@ ZFC::Point Map::GetSize() const
 // Return:      bool - 범위 안이면 true, 아니면 false.
 //
 //=============================================================================
-bool Map::Contains(const ZFC::Point position) const
+bool Map::Contains(const Point position) const
 {
     // 음수 좌표는 무조건 범위 밖이다.
     if (position.x < 0 || position.y < 0)
@@ -77,8 +81,8 @@ bool Map::Contains(const ZFC::Point position) const
 
     // y가 행 범위 안이고, x가 해당 행의 열 범위 안이어야 유효하다.
     // 행마다 길이가 다를 수 있으므로 x는 반드시 그 행 기준으로 검사한다.
-    if (static_cast<std::size_t>(position.y) < tiles.size() &&
-        static_cast<std::size_t>(position.x) < tiles[position.y].size())
+    if (static_cast<size_t>(position.y) < tiles.size() &&
+        static_cast<size_t>(position.x) < tiles[position.y].size())
     {
         return true;
     }
@@ -96,7 +100,7 @@ bool Map::Contains(const ZFC::Point position) const
 // Return:      TileType - 해당 좌표의 타일 타입. 범위 밖이면 TILE_NONE.
 //
 //=============================================================================
-TileType Map::TileAt(const ZFC::Point position) const
+TileType Map::TileAt(const Point position) const
 {
     /*
     범위 밖 접근은 TILE_NONE 으로 막아 잘못된 인덱싱을 방지한다.
@@ -121,7 +125,7 @@ TileType Map::TileAt(const ZFC::Point position) const
 // Return:      bool - 통행 가능하면 true, 아니면 false.
 //
 //=============================================================================
-bool Map::IsWalkable(const ZFC::Point position) const
+bool Map::IsWalkable(const Point position) const
 {
     // 현재는 바닥 타일만 통행 가능하다.
     // TODO: Water, Lava, Door 등이 추가되면 switch 로 타입별 통행 여부를 명시할 것.
