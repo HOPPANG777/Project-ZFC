@@ -2,15 +2,54 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map\Map.cpp" />
-    <ClCompile Include="Map\TileLayout.cpp" />
+    <ClCompile Include="Map\TileLayout.cpp">
+      <Filter>Map\TileLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="Map\Map.cpp">
+      <Filter>Map\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Map\Map.h" />
-    <ClInclude Include="Core\Vector.h" />
-    <ClInclude Include="Map\TileType.h" />
-    <ClInclude Include="Core\Point.h" />
-    <ClInclude Include="Map\TileGrid.h" />
-    <ClInclude Include="Map\TileLayout.h" />
+    <ClInclude Include="Map\TileType.h">
+      <Filter>Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\TileGrid.h">
+      <Filter>Map\Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\TileLayout.h">
+      <Filter>Map\TileLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="Map\Map.h">
+      <Filter>Map\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Point.h">
+      <Filter>Core\Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Vector.h">
+      <Filter>Core\Vector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Map">
+      <UniqueIdentifier>{6d78ba41-5de2-4e56-bb52-ccc8c3f1080b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Map">
+      <UniqueIdentifier>{c397a712-1c0b-444a-8a03-68d6b8691f12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\TileLayout">
+      <UniqueIdentifier>{c36eb8f6-6b22-47db-a127-816dc49dcc1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map\Tile">
+      <UniqueIdentifier>{612bc80c-3c2a-4ab4-acce-dacf90cc9f3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{2ff20197-0f04-49b0-92ce-74bbe2b0cabc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Point">
+      <UniqueIdentifier>{6cab21d7-4716-4e80-bc35-783c8f7762d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Vector">
+      <UniqueIdentifier>{c335ec14-e152-41d2-a5f5-76300bcabc85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
