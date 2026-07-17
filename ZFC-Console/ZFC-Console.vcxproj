@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map\Map.cpp" />
+    <ClCompile Include="Map\TileLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Point.h" />
