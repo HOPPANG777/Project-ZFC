@@ -36,6 +36,7 @@
 TileLayout::TileLayout(ZFC::TileGrid&& tiles)
 	: _tiles(std::move(tiles))
 {
+
 }
 
 //******************************************************************************
@@ -116,5 +117,5 @@ ZFC::TileType TileLayout::TileAt(const ZFC::Point position) const
 	}
 
 	return _tiles[static_cast<std::size_t>(position.y)]
-		[static_cast<std::size_t>(position.x)];
+				 [static_cast<std::size_t>(position.x)];
 }
